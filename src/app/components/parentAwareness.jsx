@@ -6,6 +6,49 @@ const Step3 = ({currentPage}) => {
   const data = useSelector(state => state.data);
   const dispatch = useDispatch();
   const [formData, setFormData] = useState(data);
+  const [formErrors, setFormErrors] = useState({});
+
+  const validateForm = () => {
+    console.log('form',formData)
+    let errors = {};
+
+    const fieldsToValidate = [
+      { key: 'manageWithScreen', options: [] },
+      { key: 'enhancedSocialSkills', options: [] },
+      { key: 'reducedSpeechAndLangDevelopment', options: [] },
+      { key: 'enhancedCommunication', options: [] },
+      { key: 'attentionProblem', options: [] },
+      { key: 'difficultiesWithScreenTime', options: [] },
+      { key: 'restrictScreenTime', options: [] },
+      { key: 'ownership', options: [] },
+      { key: 'childHave', options: [] }
+    ];
+    fieldsToValidate.forEach(field => {
+      if (!formData[field.key]) {
+        if(field.options.length !== 0){
+          errors[field.key] = {};
+          field.options.forEach(option => {
+            errors[field.key][option] = true;
+          })
+        }else{
+          errors[field.key] = true;
+        }
+      } else {
+        field.options.forEach(option => {
+          if (!formData[field.key][option]) {
+            if (!errors[field.key]) {
+              errors[field.key] = {};
+            }
+            errors[field.key][option] = true;
+          }
+        });
+      }
+    });
+    console.log('errorsform',errors)
+    
+    setFormErrors(errors);
+    return Object.keys(errors).length === 0;
+  };
 
   const submitData = () => {
     const {childName, childAge, childDob, childBirthPlace, childBirthTime, ...mainData} = formData
@@ -37,29 +80,41 @@ const Step3 = ({currentPage}) => {
     });
   };
   const handleMultiple = e => {
-    const {name, value} = e.target;
-    setFormData(prevFormData => ({
-      ...prevFormData,
-      [name]: [...(prevFormData[name] || []), value],
-    }));
+    const {name, value, checked} = e.target;
+    if(checked){
+      setFormData(prevFormData => ({
+        ...prevFormData,
+        [name]: [...prevFormData[name] || [], value],
+      }));
+    }
+    else{
+      setFormData(prevFormData => ({
+        ...prevFormData,
+        [name]: (prevFormData[name] || []).filter((item) => item !== value)
+      }));
+    }
   };
   const handleSubmit = e => {
+    e.preventDefault();
+    const isValid = validateForm();
     const submitBtn = e.nativeEvent.submitter;
     // console.log(submitBtn);
     if (submitBtn.value === 'previous') {
       dispatch(setCurrentPage(currentPage - 1));
     } else if (submitBtn.value === 'submit') {
-      dispatch(updateData(formData));
-      submitData();
-      // console.log(formData);
+      if(isValid){
+        dispatch(updateData(formData));
+        submitData();
+      }else{
+        console.log("Form invalid")
+      }
     }
-    e.preventDefault();
   };
   return (
     <div>
-      <h1 className="underline text-center mb-5 mt-0">Parent's awareness</h1>
+      <h1 className="underline text-center mb-5 mt-0 text-2xl md:text-3xl">Parent's awareness</h1>
       <form onSubmit={handleSubmit}>
-        <div className='grid grid-cols-2 gap-6'>
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-10'>
         <div>
           <label className="block text-gray-700">
             38. Do you think it is easy to manage your Child when they are given
@@ -70,12 +125,13 @@ const Step3 = ({currentPage}) => {
             name="manageWithScreen"
             value={formData?.manageWithScreen}
             onChange={handleChange}
-            className="w-full p-2 border border-gray-300 rounded mt-1">
+            className={`w-full p-2 border ${formErrors.manageWithScreen?'border-red-500':'border-gray-300'} rounded mt-1`}>
             <option value="">Select</option>
             <option value="yes">Yes</option>
             <option value="no">No</option>
             <option value="not-sure">Not sure</option>
           </select>
+          {formErrors.manageWithScreen && <span className='text-xs text-red-500'>This field is required</span>}
         </div>
         <div>
           <label className="block text-gray-700">
@@ -86,12 +142,13 @@ const Step3 = ({currentPage}) => {
             name="enhancedSocialSkills"
             value={formData?.enhancedSocialSkills}
             onChange={handleChange}
-            className="w-full p-2 border border-gray-300 rounded mt-1">
+            className={`w-full p-2 border ${formErrors.enhancedSocialSkills?'border-red-500':'border-gray-300'} rounded mt-1`}>
             <option value="">Select</option>
             <option value="yes">Yes</option>
             <option value="no">No</option>
             <option value="not-sure">Not sure</option>
           </select>
+          {formErrors.enhancedSocialSkills && <span className='text-xs text-red-500'>This field is required</span>}
         </div>
         <div>
           <label className="block text-gray-700">
@@ -102,12 +159,13 @@ const Step3 = ({currentPage}) => {
             name="reducedSpeechAndLangDevelopment"
             value={formData?.reducedSpeechAndLangDevelopment}
             onChange={handleChange}
-            className="w-full p-2 border border-gray-300 rounded mt-1">
+            className={`w-full p-2 border ${formErrors.reducedSpeechAndLangDevelopment?'border-red-500':'border-gray-300'} rounded mt-1`}>
             <option value="">Select</option>
             <option value="yes">Yes</option>
             <option value="no">No</option>
             <option value="not-sure">Not sure</option>
           </select>
+          {formErrors.reducedSpeechAndLangDevelopment && <span className='text-xs text-red-500'>This field is required</span>}
         </div>
         <div>
           <label className="block text-gray-700">
@@ -118,12 +176,13 @@ const Step3 = ({currentPage}) => {
             name="enhancedCommunication"
             value={formData?.enhancedCommunication}
             onChange={handleChange}
-            className="w-full p-2 border border-gray-300 rounded mt-1">
+            className={`w-full p-2 border ${formErrors.enhancedCommunication?'border-red-500':'border-gray-300'} rounded mt-1`}>
             <option value="">Select</option>
             <option value="yes">Yes</option>
             <option value="no">No</option>
             <option value="not-sure">Not sure</option>
           </select>
+          {formErrors.enhancedCommunication && <span className='text-xs text-red-500'>This field is required</span>}
         </div>
         <div>
           <label className="block text-gray-700">
@@ -134,12 +193,13 @@ const Step3 = ({currentPage}) => {
             name="attentionProblem"
             value={formData?.attentionProblem}
             onChange={handleChange}
-            className="w-full p-2 border border-gray-300 rounded mt-1">
+            className={`w-full p-2 border ${formErrors.attentionProblem?'border-red-500':'border-gray-300'} rounded mt-1`}>
             <option value="">Select</option>
             <option value="yes">Yes</option>
             <option value="no">No</option>
             <option value="not-sure">Not sure</option>
           </select>
+          {formErrors.attentionProblem && <span className='text-xs text-red-500'>This field is required</span>}
         </div>
         </div>
         <div className='my-6'>
@@ -147,7 +207,8 @@ const Step3 = ({currentPage}) => {
             43. Which among the following do you feel might be associated with
             screen time in children? If YES, please mention:<span className="text-xs text-red-500 ml-1">*</span>
           </label>
-          <div className='mt-3 pl-5'>
+          {formErrors.difficultiesWithScreenTime && <span className='text-xs text-red-500'>Please select atlease one</span>}
+          <div className='mt-3 pl-5 text-sm'>
           <div>
             <input
               type="checkbox"
@@ -332,7 +393,7 @@ const Step3 = ({currentPage}) => {
           </div>
           </div>
         </div>
-        <div className='grid grid-cols-2 gap-6'>
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-10'>
         <div>
           <label className="block text-gray-700">
             44. Are you aware of any guidelines set for screen time in children?
@@ -367,12 +428,13 @@ const Step3 = ({currentPage}) => {
             name="restrictScreenTime"
             value={formData?.restrictScreenTime}
             onChange={handleChange}
-            className="w-full p-2 border border-gray-300 rounded mt-1">
+            className={`w-full p-2 border ${formErrors.restrictScreenTime?'border-red-500':'border-gray-300'} rounded mt-1`}>
             <option value="">Select</option>
             <option value="yes">Yes</option>
             <option value="no">No</option>
             <option value="not-sure">Not sure</option>
           </select>
+          {formErrors.restrictScreenTime && <span className='text-xs text-red-500'>This field is required</span>}
         </div>
         <div>
           <label className="block text-gray-700">
@@ -383,11 +445,12 @@ const Step3 = ({currentPage}) => {
             name="ownership"
             value={formData?.ownership}
             onChange={handleChange}
-            className="w-full p-2 border border-gray-300 rounded mt-1">
+            className={`w-full p-2 border ${formErrors.ownership?'border-red-500':'border-gray-300'} rounded mt-1`}>
             <option value="">Select</option>
             <option value="yes">Yes</option>
             <option value="no">No</option>
           </select>
+          {formErrors.ownership && <span className='text-xs text-red-500'>This field is required</span>}
         </div>
         <div>
           <label className="block text-gray-700">
@@ -397,22 +460,23 @@ const Step3 = ({currentPage}) => {
             name="childHave"
             value={formData?.childHave}
             onChange={handleChange}
-            className="w-full p-2 border border-gray-300 rounded mt-1">
+            className={`w-full p-2 border ${formErrors.childHave?'border-red-500':'border-gray-300'} rounded mt-1`}>
             <option value="">Select</option>
             <option value="non-interactive">non-interactive / passive media viewing</option>
             <option value="interactive">
               interactive co-viewing with parent / caretaker
             </option>
           </select>
+          {formErrors.childHave && <span className='text-xs text-red-500'>This field is required</span>}
         </div>
         </div>
-        <div className="w-full flex mt-6 justify-end">
+        <div className="w-full flex mt-10 justify-evenly md:justify-end">
           {currentPage >= 1 && (
             <button
               type="submit"
               name="previous"
               value="previous"
-              className="mr-10 cursor-pointer py-3 px-8 bg-yellow-600 text-white font-bold rounded-md hover:bg-yellow-700 transition text-lg">
+              className="md:mr-10 cursor-pointer py-3 px-8 bg-yellow-600 text-white font-bold rounded-md hover:bg-yellow-700 transition text-lg">
               Previous
             </button>
           )}
