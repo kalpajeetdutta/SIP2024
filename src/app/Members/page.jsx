@@ -1,6 +1,4 @@
-import {FiArrowRightCircle, FiArrowLeftCircle} from 'react-icons/fi';
-import {TbCircleDot} from 'react-icons/tb';
-import SliderComponent from '../components/slider';
+
 import Image from 'next/image';
 
 const Members = ({pageRef}) => {
