@@ -256,7 +256,7 @@ const ScreenTimeChartone = () => {
           differences are minimal, though males slightly favor TV, and females
           use smartphones more. Tablets and laptops show minimal gender
           disparity in usage. This analysis can inform strategies for managing
-          children's screentime across different devices.
+          children{"'"}s screentime across different devices.
         </p>
       </div>
     </div>

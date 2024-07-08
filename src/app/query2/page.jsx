@@ -249,7 +249,7 @@ const Query2 = () => {
           differences are minimal, though females slightly uses more smartphones
           than males. Tablets and laptops show minimal gender
           disparity in usage. This analysis can inform strategies for managing
-          children's screentime across different devices.
+          children{"'"}s screentime across different devices.
         </p>
       </div>
     </div>

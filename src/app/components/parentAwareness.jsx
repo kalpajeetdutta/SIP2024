@@ -112,7 +112,7 @@ const Step3 = ({currentPage}) => {
   };
   return (
     <div>
-      <h1 className="underline text-center mb-5 mt-0 text-2xl md:text-3xl">Parent's awareness</h1>
+      <h1 className="underline text-center mb-5 mt-0 text-2xl md:text-3xl">Parent{"'"}s awareness</h1>
       <form onSubmit={handleSubmit}>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-10'>
         <div>
@@ -169,7 +169,7 @@ const Step3 = ({currentPage}) => {
         </div>
         <div>
           <label className="block text-gray-700">
-            41. Do you think your Child’s communication skills will enhance
+            41. Do you think your Child{"'"}s communication skills will enhance
             watching screen?<span className="text-xs text-red-500 ml-1">*</span>
           </label>
           <select
