@@ -5,13 +5,12 @@
 @tailwind components;
 @tailwind utilities;
 body {
-  @apply leading-[normal] m-0 p-0;
+  @apply leading-[normal];
 }
 *,
-::before,
-::after {
-  border-width: 0;
-}
+
 *, *::before, *::after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }

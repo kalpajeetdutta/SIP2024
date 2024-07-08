@@ -8,7 +8,7 @@ import { useEffect } from 'react';
 
 const Form = () => {
   // const currentPage = useSelector(state => state.currentPage)
-  const currentPage = 1
+  const currentPage = 0
   console.log('currentPage',currentPage)
 
   const render = (currentPage) => {

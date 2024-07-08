@@ -95,7 +95,7 @@ const Step1 = ({currentPage}) => {
   };
   return (
     <div>
-      <h1 className="underline text-center mb-5 mt-0">
+      <h1 className="underline text-center mb-5 mt-0 text-2xl md:text-3xl">
         Information of the child
       </h1>
       <form onSubmit={handleSubmit}>
@@ -439,7 +439,7 @@ const Step1 = ({currentPage}) => {
               onChange={handleChange}
               className="w-full p-2 border border-gray-300 rounded mt-1">
               <option value="">Select</option>
-              <option value="">No siblings</option>
+              <option value="0">No siblings</option>
               <option value="0-2">0-2 year</option>
               <option value="2-5">2-5 year</option>
             </select>
@@ -466,7 +466,7 @@ const Step1 = ({currentPage}) => {
               onChange={handleChange}
               className="w-full p-2 border border-gray-300 rounded mt-1">
               <option value="">Select</option>
-              <option value="">No siblings</option>
+              <option value="0">No siblings</option>
               <option value="2-5">2-5 year</option>
               <option value=">5">More than 5 years</option>
             </select>
@@ -563,7 +563,7 @@ const Step1 = ({currentPage}) => {
             {formErrors.socioeconomicClass && <span className='text-xs text-red-500'>This field is required</span>}
           </div>
         </div>
-        <div className="w-full mt-10 flex justify-end">
+        <div className="w-full mt-10 flex justify-center md:justify-end">
           <button
             type="submit"
             className="cursor-pointer py-3 px-8 bg-blue-600 text-white font-bold rounded-md hover:bg-blue-700 transition text-lg">

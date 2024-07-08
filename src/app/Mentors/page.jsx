@@ -1,22 +1,68 @@
+import Image from 'next/image';
+
 const Mentors = ({pageRef}) => {
+  const items = [
+    {
+      name: 'Item 1',
+      desc: 'Description of Item 1',
+    },
+  ];
   return (
-    <div ref={pageRef} className="w-full h-screen flex flex-row-reverse relative">
-        <div className="absolute top-0 left-[50px] [filter:blur(500px)] rounded-[50%] bg-lightcyan w-[439.3px] h-[716.3px] [transform:_rotate(-5.4deg)] [transform-origin:0_0] -z-10" />
-      <div className="w-[30%] h-full flex-shrink-0">
-        <img
-          className="w-full h-full object-cover"
-          alt=""
-          src="/tezpur-university-1@2x.png"
-        />
-      </div>
-      <div className="w-[70%] h-full">
-        <div className="font-semibold text-5xl text-center py-20">
-          <span className="text-darkturquoise-300">MENTORS</span>
-          <span className="text-black"> CONTRIBUTED TO THIS INTERNSHIP</span>
+    <div
+      ref={pageRef}
+      className="w-full h-screen flex flex-row-reverse relative">
+      <div className="absolute top-0 left-[50px] [filter:blur(500px)] rounded-[50%] bg-lightcyan w-[439.3px] h-[716.3px] [transform:_rotate(-5.4deg)] [transform-origin:0_0] -z-10" />
+      <div className="w-full h-full px-10 py-5">
+        <div className="w-full h-[100px] flex flex-col items-center">
+          <h1 className="m-0 p-0 text-3xl font-bold">Our Mentor</h1>
+          <p className="mt-3 p-0 text-sm text-slate-600">
+            Get to know the face behind our support and guidance
+          </p>
         </div>
-        <div className="w-full flex justify-center gap-20 z-50">
-          <div className="w-[300px] h-[427px] bg-slate-300 flex-shrink-0"></div>
-          <div className="w-[300px] h-[427px] bg-slate-300 flex-shrink-0"></div>
+        <div className="w-full h-[calc(100vh-140px)]">
+          <div className="w-full flex justify-center">
+            <div className="w-fit">
+              <div className="w-[200px] md:w-[200px] h-[220px] md:h-[220px]">
+                <Image
+                  className="bg-red-500 w-full h-full object-cover"
+                  src="/mentor.jpeg"
+                  alt='mentor image'
+                  width={150}
+                  height={150}
+                />
+              </div>
+            </div>
+          </div>
+          <h4 className="m-0 p-0 my-5 text-base md:text-lg font-bold text-center">Dr. Siddhartha S. Satapathy</h4>
+          <div className="w-full flex flex-col items-center">
+            <ul className="text-sm ml-5 list-none">
+              <li className="my-1">MTech (IT), Tezpur University, 2006.</li>
+              <li className="my-1">PhD, Tezpur University, January 2014.</li>
+            </ul>
+            <h3 className="text-base font-medium mt-3">Academic career:</h3>
+            <ul className="text-sm ml-5 list-none text-center">
+              <li className="my-1">
+                JDA Software India Pvt. Ltd, Hyderabad (August 2006 to September
+                2007).
+              </li>
+              <li>Teradata, Hyderabad (September 2007 to December 2007).</li>
+            </ul>
+            <h3 className="text-base font-medium mt-3">Academic career:</h3>
+            <ul className="text-sm ml-5 list-none text-center">
+              <li className="my-1">
+                Asst. Professor, Department of Computer Science & Engineering,
+                Tezpur University (10th December 2007 to 25th August 2014).
+              </li>
+              <li className="my-1">
+                Assoc. Professor, Department of Computer Science & Engineering,
+                Tezpur University (Since 26th August 2014).
+              </li>
+              <li className="my-1">
+                Visiting Lecturer, University of Bath, UK (September 2014 to
+                September 2015).
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>

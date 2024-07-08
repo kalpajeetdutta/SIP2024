@@ -4,16 +4,22 @@ import 'slick-carousel/slick/slick-theme.css';
 import Image from 'next/image';
 import {FiArrowLeftCircle, FiArrowRightCircle} from 'react-icons/fi';
 import { TbCircleDot } from 'react-icons/tb';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const SliderComponent = ({items}) => {
     const [currentSlide, setCurrentSlide] = useState(0);
+    const [width, setWidth] = useState(0)
 
+    useEffect(() => {
+      const width = window.innerWidth
+      setWidth(width)
+    },[width])
+    console.log(width)
   var settings = {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: width<768 ? 1 : 3,
     slidesToScroll: 1,
     arrows: true,
     nextArrow: <CustomArrowRight />,
@@ -31,7 +37,7 @@ const SliderComponent = ({items}) => {
         {items.map(({name, desc}, _i) => {
           return (
             <div key={_i} className="w-full h-full">
-              <div className="py-3 px-5">
+              <div className="py-3 md:px-5">
                 <Image
                   className="w-full block object-cover"
                   src="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=800"

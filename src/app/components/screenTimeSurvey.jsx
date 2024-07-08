@@ -103,15 +103,15 @@ const Step2 = ({currentPage}) => {
             </label>
             {formErrors.weekdays && <span className='text-xs text-red-500'>This field is required</span>}
             <div className="pl-5">
-              <div className="w-full flex justify-between items-center mt-3">
-                <label className="mr-5 flex-1 text-xs lg:text-sm" htmlFor="weekdays_tv">
+              <div className="w-full flex flex-col md:flex-row md:justify-center md:items-center mt-3">
+                <label className="mr-5 w-full md:flex-1 text-xs lg:text-sm" htmlFor="weekdays_tv">
                   TV viewing hours per day by the child:
                 </label>
                 <select
                   name="weekdays_tv"
                   onChange={handleChange}
                   value={formData?.weekdays?.tv}
-                  className={`flex-1 p-2 border ${formErrors.weekdays?.tv?'border-red-500':'border-gray-300'} rounded`}>
+                  className={`flex-1 p-2 border ${formErrors.weekdays?.tv?'border-red-500':'border-gray-300'} rounded mt-1 md:mt-0`}>
                   <option value="">Select</option>
                   <option value="no-device">
                     No electronic device at home
@@ -124,15 +124,15 @@ const Step2 = ({currentPage}) => {
                   <option value=">8h">More than 8 hours</option>
                 </select>
               </div>
-              <div className="w-full flex justify-between items-center mt-2">
-                <label className="mr-5 flex-1 text-xs lg:text-sm" htmlFor="weekdays_smartphone">
+              <div className="w-full flex flex-col md:flex-row md:justify-center md:items-center mt-2">
+                <label className="mr-5 w-full md:flex-1 text-xs lg:text-sm" htmlFor="weekdays_smartphone">
                   Smartphone use by the child:
                 </label>
                 <select
                   name="weekdays_smartphone"
                   value={formData?.weekdays?.smartphone}
                   onChange={handleChange}
-                  className={`flex-1 p-2 border ${formErrors.weekdays?.tv?'border-red-500':'border-gray-300'} rounded`}>
+                  className={`flex-1 p-2 border ${formErrors.weekdays?.tv?'border-red-500':'border-gray-300'} rounded mt-1 md:mt-0`}>
                   <option value="">Select</option>
                   <option value="no-device">
                     No electronic device at home
@@ -145,15 +145,15 @@ const Step2 = ({currentPage}) => {
                   <option value=">8h">More than 8 hours</option>
                 </select>
               </div>
-              <div className="w-full flex justify-between items-center mt-2">
-                <label className="mr-5 flex-1 text-xs lg:text-sm" htmlFor="weekdays_laptop">
+              <div className="w-full flex flex-col md:flex-row md:justify-center md:items-center mt-2">
+                <label className="mr-5 w-full md:flex-1 text-xs lg:text-sm" htmlFor="weekdays_laptop">
                   Laptop use by the child:
                 </label>
                 <select
                   name="weekdays_laptop"
                   value={formData?.weekdays?.laptop}
                   onChange={handleChange}
-                  className={`flex-1 p-2 border ${formErrors.weekdays?.tv?'border-red-500':'border-gray-300'} rounded`}>
+                  className={`flex-1 p-2 border ${formErrors.weekdays?.tv?'border-red-500':'border-gray-300'} rounded mt-1 md:mt-0`}>
                   <option value="">Select</option>
                   <option value="no-device">
                     No electronic device at home
@@ -166,15 +166,15 @@ const Step2 = ({currentPage}) => {
                   <option value=">8h">More than 8 hours</option>
                 </select>
               </div>
-              <div className="w-full flex justify-between items-center mt-2">
-                <label className="mr-5 flex-1 text-xs lg:text-sm" htmlFor="weekdays_tablet">
+              <div className="w-full flex flex-col md:flex-row md:justify-center md:items-center mt-2">
+                <label className="mr-5 w-full md:flex-1 text-xs lg:text-sm" htmlFor="weekdays_tablet">
                   Tablet use by the child:
                 </label>
                 <select
                   name="weekdays_tablet"
                   value={formData?.weekdays?.tablet}
                   onChange={handleChange}
-                  className={`flex-1 p-2 border ${formErrors.weekdays?.tv?'border-red-500':'border-gray-300'} rounded`}>
+                  className={`flex-1 p-2 border ${formErrors.weekdays?.tv?'border-red-500':'border-gray-300'} rounded mt-1 md:mt-0`}>
                   <option value="">Select</option>
                   <option value="no-device">
                     No electronic device at home
@@ -197,15 +197,15 @@ const Step2 = ({currentPage}) => {
             </label>
             {formErrors.weekends && <span className='text-xs text-red-500'>This field is required</span>}
             <div className="pl-5">
-              <div className="w-full flex justify-between items-center mt-3">
-                <label className="mr-5 flex-1 text-xs lg:text-sm" htmlFor="weekends_tv">
+              <div className="w-full flex flex-col md:flex-row md:justify-center md:items-center mt-3">
+                <label className="mr-5 w-full md:flex-1 text-xs lg:text-sm" htmlFor="weekends_tv">
                   TV viewing hours per day by the child:
                 </label>
                 <select
                   name="weekends_tv"
                   value={formData?.weekends?.tv}
                   onChange={handleChange}
-                  className={`flex-1 p-2 border ${formErrors.weekends?.tv?'border-red-500':'border-gray-300'} rounded`}>
+                  className={`flex-1 p-2 border ${formErrors.weekends?.tv?'border-red-500':'border-gray-300'} rounded mt-1 md:mt-0`}>
                   <option value="">Select</option>
                   <option value="no-device">
                     No electronic device at home
@@ -218,15 +218,15 @@ const Step2 = ({currentPage}) => {
                   <option value=">8h">More than 8 hours</option>
                 </select>
               </div>
-              <div className="w-full flex justify-between items-center mt-2">
-                <label className="mr-5 flex-1 text-xs lg:text-sm" htmlFor="weekends_smartphone">
+              <div className="w-full flex flex-col md:flex-row md:justify-center md:items-center mt-2">
+                <label className="mr-5 w-full md:flex-1 text-xs lg:text-sm" htmlFor="weekends_smartphone">
                   Smartphone use by the child:
                 </label>
                 <select
                   name="weekends_smartphone"
                   value={formData?.weekends?.smartphone}
                   onChange={handleChange}
-                  className={`flex-1 p-2 border ${formErrors.weekends?.smartphone?'border-red-500':'border-gray-300'} rounded`}>
+                  className={`flex-1 p-2 border ${formErrors.weekends?.smartphone?'border-red-500':'border-gray-300'} rounded mt-1 md:mt-0`}>
                   <option value="">Select</option>
                   <option value="no-device">
                     No electronic device at home
@@ -239,15 +239,15 @@ const Step2 = ({currentPage}) => {
                   <option value=">8h">More than 8 hours</option>
                 </select>
               </div>
-              <div className="w-full flex justify-between items-center mt-2">
-                <label className="mr-5 flex-1 text-xs lg:text-sm" htmlFor="weekends_laptop">
+              <div className="w-full flex flex-col md:flex-row md:justify-center md:items-center mt-2">
+                <label className="mr-5 w-full md:flex-1 text-xs lg:text-sm" htmlFor="weekends_laptop">
                   Laptop use by the child:
                 </label>
                 <select
                   name="weekends_laptop"
                   value={formData?.weekends?.laptop}
                   onChange={handleChange}
-                  className={`flex-1 p-2 border ${formErrors.weekends?.laptop?'border-red-500':'border-gray-300'} rounded`}>
+                  className={`flex-1 p-2 border ${formErrors.weekends?.laptop?'border-red-500':'border-gray-300'} rounded mt-1 md:mt-0`}>
                   <option value="">Select</option>
                   <option value="no-device">
                     No electronic device at home
@@ -260,15 +260,15 @@ const Step2 = ({currentPage}) => {
                   <option value=">8h">More than 8 hours</option>
                 </select>
               </div>
-              <div className="w-full flex justify-between items-center mt-2">
-                <label className="mr-5 flex-1 text-xs lg:text-sm" htmlFor="weekends_tablet">
+              <div className="w-full flex flex-col md:flex-row md:justify-center md:items-center mt-2">
+                <label className="mr-5 w-full md:flex-1 text-xs lg:text-sm" htmlFor="weekends_tablet">
                   Tablet use by the child:
                 </label>
                 <select
                   name="weekends_tablet"
                   value={formData?.weekends?.tablet}
                   onChange={handleChange}
-                  className={`flex-1 p-2 border ${formErrors.weekends?.tablet?'border-red-500':'border-gray-300'} rounded`}>
+                  className={`flex-1 p-2 border ${formErrors.weekends?.tablet?'border-red-500':'border-gray-300'} rounded mt-1 md:mt-0`}>
                   <option value="">Select</option>
                   <option value="no-device">
                     No electronic device at home
@@ -291,15 +291,15 @@ const Step2 = ({currentPage}) => {
             </label>
             {formErrors.weekdaysScreenPurpose && <span className='text-xs text-red-500'>This field is required</span>}
             <div className="pl-5">
-              <div className="w-full flex justify-between items-center mt-3">
-                <label className="mr-5 flex-1 text-xs lg:text-sm" htmlFor="weekdaysScreenPurpose_education">
+              <div className="w-full flex flex-col md:flex-row md:justify-center md:items-center mt-3">
+                <label className="mr-5 w-full md:flex-1 text-xs lg:text-sm" htmlFor="weekdaysScreenPurpose_education">
                   For education:
                 </label>
                 <select
                   name="weekdaysScreenPurpose_education"
                   value={formData?.weekdaysScreenPurpose?.education}
                   onChange={handleChange}
-                  className={`flex-1 p-2 border ${formErrors.weekdaysScreenPurpose?.education?'border-red-500':'border-gray-300'} rounded`}>
+                  className={`flex-1 p-2 border ${formErrors.weekdaysScreenPurpose?.education?'border-red-500':'border-gray-300'} rounded mt-1 md:mt-0`}>
                   <option value="">Select</option>
                   <option value="no-device">
                     No electronic device at home
@@ -312,15 +312,15 @@ const Step2 = ({currentPage}) => {
                   <option value=">8h">More than 8 hours</option>
                 </select>
               </div>
-              <div className="w-full flex justify-between items-center mt-2">
-                <label className="mr-5 flex-1 text-xs lg:text-sm" htmlFor="weekdaysScreenPurpose_entertainment">
+              <div className="w-full flex flex-col md:flex-row md:justify-center md:items-center mt-2">
+                <label className="mr-5 w-full md:flex-1 text-xs lg:text-sm" htmlFor="weekdaysScreenPurpose_entertainment">
                   For entertainment:
                 </label>
                 <select
                   name="weekdaysScreenPurpose_entertainment"
                   value={formData?.weekdaysScreenPurpose?.entertainment}
                   onChange={handleChange}
-                  className={`flex-1 p-2 border ${formErrors.weekdaysScreenPurpose?.entertainment?'border-red-500':'border-gray-300'} rounded`}>
+                  className={`flex-1 p-2 border ${formErrors.weekdaysScreenPurpose?.entertainment?'border-red-500':'border-gray-300'} rounded mt-1 md:mt-0`}>
                   <option value="">Select</option>
                   <option value="no-device">
                     No electronic device at home
@@ -333,15 +333,15 @@ const Step2 = ({currentPage}) => {
                   <option value=">8h">More than 8 hours</option>
                 </select>
               </div>
-              <div className="w-full flex justify-between items-center mt-2">
-                <label className="mr-5 flex-1 text-xs lg:text-sm" htmlFor="weekdaysScreenPurpose_playingGames">
+              <div className="w-full flex flex-col md:flex-row md:justify-center md:items-center mt-2">
+                <label className="mr-5 w-full md:flex-1 text-xs lg:text-sm" htmlFor="weekdaysScreenPurpose_playingGames">
                   For playing games:
                 </label>
                 <select
                   name="weekdaysScreenPurpose_playingGames"
                   value={formData?.weekdaysScreenPurpose?.playingGames}
                   onChange={handleChange}
-                  className={`flex-1 p-2 border ${formErrors.weekdaysScreenPurpose?.playingGames?'border-red-500':'border-gray-300'} rounded`}>
+                  className={`flex-1 p-2 border ${formErrors.weekdaysScreenPurpose?.playingGames?'border-red-500':'border-gray-300'} rounded mt-1 md:mt-0`}>
                   <option value="">Select</option>
                   <option value="no-device">
                     No electronic device at home
@@ -354,15 +354,15 @@ const Step2 = ({currentPage}) => {
                   <option value=">8h">More than 8 hours</option>
                 </select>
               </div>
-              <div className="w-full flex justify-between items-center mt-2">
-                <label className="mr-5 flex-1 text-xs lg:text-sm" htmlFor="weekdaysScreenPurpose_socialConnect">
+              <div className="w-full flex flex-col md:flex-row md:justify-center md:items-center mt-2">
+                <label className="mr-5 w-full md:flex-1 text-xs lg:text-sm" htmlFor="weekdaysScreenPurpose_socialConnect">
                   For social connect by the child (video calls):
                 </label>
                 <select
                   name="weekdaysScreenPurpose_socialConnect"
                   value={formData?.weekdaysScreenPurpose?.socialConnect}
                   onChange={handleChange}
-                  className={`flex-1 p-2 border ${formErrors.weekdaysScreenPurpose?.socialConnect?'border-red-500':'border-gray-300'} rounded`}>
+                  className={`flex-1 p-2 border ${formErrors.weekdaysScreenPurpose?.socialConnect?'border-red-500':'border-gray-300'} rounded mt-1 md:mt-0`}>
                   <option value="">Select</option>
                   <option value="no-device">
                     No electronic device at home
@@ -375,15 +375,15 @@ const Step2 = ({currentPage}) => {
                   <option value=">8h">More than 8 hours</option>
                 </select>
               </div>
-              <div className="w-full flex justify-between items-center mt-2">
-                <label className="mr-5 flex-1 text-xs lg:text-sm" htmlFor="weekdaysScreenPurpose_meals">
+              <div className="w-full flex flex-col md:flex-row md:justify-center md:items-center mt-2">
+                <label className="mr-5 w-full md:flex-1 text-xs lg:text-sm" htmlFor="weekdaysScreenPurpose_meals">
                   During meals by the child:
                 </label>
                 <select
                   name="weekdaysScreenPurpose_meals"
                   value={formData?.weekdaysScreenPurpose?.meals}
                   onChange={handleChange}
-                  className={`flex-1 p-2 border ${formErrors.weekdaysScreenPurpose?.meals?'border-red-500':'border-gray-300'} rounded`}>
+                  className={`flex-1 p-2 border ${formErrors.weekdaysScreenPurpose?.meals?'border-red-500':'border-gray-300'} rounded mt-1 md:mt-0`}>
                   <option value="">Select</option>
                   <option value="no-device">
                     No electronic device at home
@@ -396,15 +396,15 @@ const Step2 = ({currentPage}) => {
                   <option value=">8h">More than 8 hours</option>
                 </select>
               </div>
-              <div className="w-full flex justify-between items-center mt-2">
-                <label className="mr-5 flex-1 text-xs lg:text-sm" htmlFor="weekdaysScreenPurpose_beforeBed">
+              <div className="w-full flex flex-col md:flex-row md:justify-center md:items-center mt-2">
+                <label className="mr-5 w-full md:flex-1 text-xs lg:text-sm" htmlFor="weekdaysScreenPurpose_beforeBed">
                   Just before bed time by the child:
                 </label>
                 <select
                   name="weekdaysScreenPurpose_beforeBed"
                   value={formData?.weekdaysScreenPurpose?.beforeBed}
                   onChange={handleChange}
-                  className={`flex-1 p-2 border ${formErrors.weekdaysScreenPurpose?.beforeBed?'border-red-500':'border-gray-300'} rounded`}>
+                  className={`flex-1 p-2 border ${formErrors.weekdaysScreenPurpose?.beforeBed?'border-red-500':'border-gray-300'} rounded mt-1 md:mt-0`}>
                   <option value="">Select</option>
                   <option value="no-device">
                     No electronic device at home
@@ -417,15 +417,15 @@ const Step2 = ({currentPage}) => {
                   <option value=">8h">More than 8 hours</option>
                 </select>
               </div>
-              <div className="w-full flex justify-between items-center mt-2">
-                <label className="mr-5 flex-1 text-xs lg:text-sm" htmlFor="weekdaysScreenPurpose_engaging">
+              <div className="w-full flex flex-col md:flex-row md:justify-center md:items-center mt-2">
+                <label className="mr-5 w-full md:flex-1 text-xs lg:text-sm" htmlFor="weekdaysScreenPurpose_engaging">
                   For engaging the child (when you are busy):
                 </label>
                 <select
                   name="weekdaysScreenPurpose_engaging"
                   value={formData?.weekdaysScreenPurpose?.engaging}
                   onChange={handleChange}
-                  className={`flex-1 p-2 border ${formErrors.weekdaysScreenPurpose?.engaging?'border-red-500':'border-gray-300'} rounded`}>
+                  className={`flex-1 p-2 border ${formErrors.weekdaysScreenPurpose?.engaging?'border-red-500':'border-gray-300'} rounded mt-1 md:mt-0`}>
                   <option value="">Select</option>
                   <option value="no-device">
                     No electronic device at home
@@ -448,15 +448,15 @@ const Step2 = ({currentPage}) => {
             </label>
             {formErrors.weekendsScreenPurpose && <span className='text-xs text-red-500'>This field is required</span>}
             <div className="pl-5">
-              <div className="w-full flex justify-between items-center mt-3">
-                <label className="mr-5 flex-1 text-xs lg:text-sm" htmlFor="weekendsScreenPurpose_education">
+              <div className="w-full flex flex-col md:flex-row md:justify-center md:items-center mt-3">
+                <label className="mr-5 w-full md:flex-1 text-xs lg:text-sm" htmlFor="weekendsScreenPurpose_education">
                   For education:
                 </label>
                 <select
                   name="weekendsScreenPurpose_education"
                   value={formData?.weekendsScreenPurpose?.education}
                   onChange={handleChange}
-                  className={`flex-1 p-2 border ${formErrors.weekendsScreenPurpose?.education?'border-red-500':'border-gray-300'} rounded`}>
+                  className={`flex-1 p-2 border ${formErrors.weekendsScreenPurpose?.education?'border-red-500':'border-gray-300'} rounded mt-1 md:mt-0`}>
                   <option value="">Select</option>
                   <option value="no-device">
                     No electronic device at home
@@ -469,15 +469,15 @@ const Step2 = ({currentPage}) => {
                   <option value=">8h">More than 8 hours</option>
                 </select>
               </div>
-              <div className="w-full flex justify-between items-center mt-2">
-                <label className="mr-5 flex-1 text-xs lg:text-sm" htmlFor="weekendsScreenPurpose_entertainment">
+              <div className="w-full flex flex-col md:flex-row md:justify-center md:items-center mt-2">
+                <label className="mr-5 w-full md:flex-1 text-xs lg:text-sm" htmlFor="weekendsScreenPurpose_entertainment">
                   For entertainment:
                 </label>
                 <select
                   name="weekendsScreenPurpose_entertainment"
                   value={formData?.weekendsScreenPurpose?.entertainment}
                   onChange={handleChange}
-                  className={`flex-1 p-2 border ${formErrors.weekendsScreenPurpose?.entertainment?'border-red-500':'border-gray-300'} rounded`}>
+                  className={`flex-1 p-2 border ${formErrors.weekendsScreenPurpose?.entertainment?'border-red-500':'border-gray-300'} rounded mt-1 md:mt-0`}>
                   <option value="">Select</option>
                   <option value="no-device">
                     No electronic device at home
@@ -490,15 +490,15 @@ const Step2 = ({currentPage}) => {
                   <option value=">8h">More than 8 hours</option>
                 </select>
               </div>
-              <div className="w-full flex justify-between items-center mt-2">
-                <label className="mr-5 flex-1 text-xs lg:text-sm" htmlFor="weekendsScreenPurpose_playingGames">
+              <div className="w-full flex flex-col md:flex-row md:justify-center md:items-center mt-2">
+                <label className="mr-5 w-full md:flex-1 text-xs lg:text-sm" htmlFor="weekendsScreenPurpose_playingGames">
                   For playing games:
                 </label>
                 <select
                   name="weekendsScreenPurpose_playingGames"
                   value={formData?.weekendsScreenPurpose?.playingGames}
                   onChange={handleChange}
-                  className={`flex-1 p-2 border ${formErrors.weekendsScreenPurpose?.playingGames?'border-red-500':'border-gray-300'} rounded`}>
+                  className={`flex-1 p-2 border ${formErrors.weekendsScreenPurpose?.playingGames?'border-red-500':'border-gray-300'} rounded mt-1 md:mt-0`}>
                   <option value="">Select</option>
                   <option value="no-device">
                     No electronic device at home
@@ -511,15 +511,15 @@ const Step2 = ({currentPage}) => {
                   <option value=">8h">More than 8 hours</option>
                 </select>
               </div>
-              <div className="w-full flex justify-between items-center mt-2">
-                <label className="mr-5 flex-1 text-xs lg:text-sm" htmlFor="weekendsScreenPurpose_socialConnect">
+              <div className="w-full flex flex-col md:flex-row md:justify-center md:items-center mt-2">
+                <label className="mr-5 w-full md:flex-1 text-xs lg:text-sm" htmlFor="weekendsScreenPurpose_socialConnect">
                   For social connect by the child (video calls):
                 </label>
                 <select
                   name="weekendsScreenPurpose_socialConnect"
                   value={formData?.weekendsScreenPurpose?.socialConnect}
                   onChange={handleChange}
-                  className={`flex-1 p-2 border ${formErrors.weekendsScreenPurpose?.socialConnect?'border-red-500':'border-gray-300'} rounded`}>
+                  className={`flex-1 p-2 border ${formErrors.weekendsScreenPurpose?.socialConnect?'border-red-500':'border-gray-300'} rounded mt-1 md:mt-0`}>
                   <option value="">Select</option>
                   <option value="no-device">
                     No electronic device at home
@@ -532,15 +532,15 @@ const Step2 = ({currentPage}) => {
                   <option value=">8h">More than 8 hours</option>
                 </select>
               </div>
-              <div className="w-full flex justify-between items-center mt-2">
-                <label className="mr-5 flex-1 text-xs lg:text-sm" htmlFor="weekendsScreenPurpose_meals">
+              <div className="w-full flex flex-col md:flex-row md:justify-center md:items-center mt-2">
+                <label className="mr-5 w-full md:flex-1 text-xs lg:text-sm" htmlFor="weekendsScreenPurpose_meals">
                   During meals by the child:
                 </label>
                 <select
                   name="weekendsScreenPurpose_meals"
                   value={formData?.weekendsScreenPurpose?.meals}
                   onChange={handleChange}
-                  className={`flex-1 p-2 border ${formErrors.weekendsScreenPurpose?.meals?'border-red-500':'border-gray-300'} rounded`}>
+                  className={`flex-1 p-2 border ${formErrors.weekendsScreenPurpose?.meals?'border-red-500':'border-gray-300'} rounded mt-1 md:mt-0`}>
                   <option value="">Select</option>
                   <option value="no-device">
                     No electronic device at home
@@ -553,15 +553,15 @@ const Step2 = ({currentPage}) => {
                   <option value=">8h">More than 8 hours</option>
                 </select>
               </div>
-              <div className="w-full flex justify-between items-center mt-2">
-                <label className="mr-5 flex-1 text-xs lg:text-sm" htmlFor="weekendsScreenPurpose_beforeBed">
+              <div className="w-full flex flex-col md:flex-row md:justify-center md:items-center mt-2">
+                <label className="mr-5 w-full md:flex-1 text-xs lg:text-sm" htmlFor="weekendsScreenPurpose_beforeBed">
                   Just before bed time by the child:
                 </label>
                 <select
                   name="weekendsScreenPurpose_beforeBed"
                   value={formData?.weekendsScreenPurpose?.beforeBed}
                   onChange={handleChange}
-                  className={`flex-1 p-2 border ${formErrors.weekendsScreenPurpose?.beforeBed?'border-red-500':'border-gray-300'} rounded`}>
+                  className={`flex-1 p-2 border ${formErrors.weekendsScreenPurpose?.beforeBed?'border-red-500':'border-gray-300'} rounded mt-1 md:mt-0`}>
                   <option value="">Select</option>
                   <option value="no-device">
                     No electronic device at home
@@ -574,15 +574,15 @@ const Step2 = ({currentPage}) => {
                   <option value=">8h">More than 8 hours</option>
                 </select>
               </div>
-              <div className="w-full flex justify-between items-center mt-2">
-                <label className="mr-5 flex-1 text-xs lg:text-sm" htmlFor="weekendsScreenPurpose_engaging">
+              <div className="w-full flex flex-col md:flex-row md:justify-center md:items-center mt-2">
+                <label className="mr-5 w-full md:flex-1 text-xs lg:text-sm" htmlFor="weekendsScreenPurpose_engaging">
                   For engaging the child (when you are busy):
                 </label>
                 <select
                   name="weekendsScreenPurpose_engaging"
                   value={formData?.weekendsScreenPurpose?.engaging}
                   onChange={handleChange}
-                  className={`flex-1 p-2 border ${formErrors.weekendsScreenPurpose?.engaging?'border-red-500':'border-gray-300'} rounded`}>
+                  className={`flex-1 p-2 border ${formErrors.weekendsScreenPurpose?.engaging?'border-red-500':'border-gray-300'} rounded mt-1 md:mt-0`}>
                   <option value="">Select</option>
                   <option value="no-device">
                     No electronic device at home
@@ -627,7 +627,7 @@ const Step2 = ({currentPage}) => {
               onChange={handleChange}
               className={`w-full p-2 border ${formErrors.caretakerScreenTime?'border-red-500':'border-gray-300'} rounded mt-1`}>
               <option value="">Select</option>
-              <option value="zero">No screen time exposure</option>
+              <option value="0">No screen time exposure</option>
               <option value="<2h">{'<'}2 hours</option>
               <option value="2-4h">2-4 hours</option>
               <option value="4-6h">4-6 hours</option>
@@ -645,7 +645,7 @@ const Step2 = ({currentPage}) => {
           </label>
           {formErrors.programsWatched && <span className='text-xs text-red-500'>This field is required</span>}
           <div className="pl-5">
-            <div className="w-full flex justify-between items-center mt-3">
+            <div className="w-full flex flex-col md:flex-row md:justify-center md:items-center mt-3">
               <label className="mr-5 flex-1 text-sm" htmlFor="programsWatched_animatedCartoons">
                 Animated cartoons:
               </label>
@@ -653,7 +653,7 @@ const Step2 = ({currentPage}) => {
                 name="programsWatched_animatedCartoons"
                 value={formData?.programsWatched?.animatedCartoons}
                 onChange={handleChange}
-                className={`flex-1 p-2 border ${formErrors.programsWatched?.animatedCartoons?'border-red-500':'border-gray-300'} rounded`}>
+                className={`flex-1 p-2 border ${formErrors.programsWatched?.animatedCartoons?'border-red-500':'border-gray-300'} rounded mt-1 md:mt-0`}>
                 <option value="">Select</option>
                 <option value="0h">0 hour</option>
                 <option value="<2h">{'<'}2 hours</option>
@@ -663,15 +663,15 @@ const Step2 = ({currentPage}) => {
                 <option value=">8h">More than 8 hours</option>
               </select>
             </div>
-            <div className="w-full flex justify-between items-center mt-2">
+            <div className="w-full flex flex-col md:flex-row md:justify-center md:items-center mt-2">
               <label className="mr-5 flex-1 text-sm" htmlFor="programsWatched_nonAnimatedCartoons">
-                Non - animated cartoons:
+                Non - Animated cartoons:
               </label>
               <select
                 name="programsWatched_nonAnimatedCartoons"
                 value={formData?.programsWatched?.nonAnimatedCartoons}
                 onChange={handleChange}
-                className={`flex-1 p-2 border ${formErrors.programsWatched?.nonAnimatedCartoons?'border-red-500':'border-gray-300'} rounded`}>
+                className={`flex-1 p-2 border ${formErrors.programsWatched?.nonAnimatedCartoons?'border-red-500':'border-gray-300'} rounded mt-1 md:mt-0`}>
                 <option value="">Select</option>
                 <option value="0h">0 hour</option>
                 <option value="<2h">{'<'}2 hours</option>
@@ -681,7 +681,7 @@ const Step2 = ({currentPage}) => {
                 <option value=">8h">More than 8 hours</option>
               </select>
             </div>
-            <div className="w-full flex justify-between items-center mt-2">
+            <div className="w-full flex flex-col md:flex-row md:justify-center md:items-center mt-2">
               <label className="mr-5 flex-1 text-sm" htmlFor="programsWatched_movieAnimated">
                 Movie (Animated):
               </label>
@@ -689,7 +689,7 @@ const Step2 = ({currentPage}) => {
                 name="programsWatched_movieAnimated"
                 value={formData?.programsWatched?.movieAnimated}
                 onChange={handleChange}
-                className={`flex-1 p-2 border ${formErrors.programsWatched?.movieAnimated?'border-red-500':'border-gray-300'} rounded`}>
+                className={`flex-1 p-2 border ${formErrors.programsWatched?.movieAnimated?'border-red-500':'border-gray-300'} rounded mt-1 md:mt-0`}>
                 <option value="">Select</option>
                 <option value="0h">0 hour</option>
                 <option value="<2h">{'<'}2 hours</option>
@@ -699,7 +699,7 @@ const Step2 = ({currentPage}) => {
                 <option value=">8h">More than 8 hours</option>
               </select>
             </div>
-            <div className="w-full flex justify-between items-center mt-2">
+            <div className="w-full flex flex-col md:flex-row md:justify-center md:items-center mt-2">
               <label className="mr-5 flex-1 text-sm" htmlFor="programsWatched_movieNonAnimated">
                 Movie (Non-animated):
               </label>
@@ -707,7 +707,7 @@ const Step2 = ({currentPage}) => {
                 name="programsWatched_movieNonAnimated"
                 value={formData?.programsWatched?.movieNonAnimated}
                 onChange={handleChange}
-                className={`flex-1 p-2 border ${formErrors.programsWatched?.movieNonAnimated?'border-red-500':'border-gray-300'} rounded`}>
+                className={`flex-1 p-2 border ${formErrors.programsWatched?.movieNonAnimated?'border-red-500':'border-gray-300'} rounded mt-1 md:mt-0`}>
                 <option value="">Select</option>
                 <option value="0h">0 hour</option>
                 <option value="<2h">{'<'}2 hours</option>
@@ -717,7 +717,7 @@ const Step2 = ({currentPage}) => {
                 <option value=">8h">More than 8 hours</option>
               </select>
             </div>
-            <div className="w-full flex justify-between items-center mt-2">
+            <div className="w-full flex flex-col md:flex-row md:justify-center md:items-center mt-2">
               <label className="mr-5 flex-1 text-sm" htmlFor="programsWatched_songs">
                 Songs:
               </label>
@@ -725,7 +725,7 @@ const Step2 = ({currentPage}) => {
                 name="programsWatched_songs"
                 value={formData?.programsWatched?.songs}
                 onChange={handleChange}
-                className={`flex-1 p-2 border ${formErrors.programsWatched?.songs?'border-red-500':'border-gray-300'} rounded`}>
+                className={`flex-1 p-2 border ${formErrors.programsWatched?.songs?'border-red-500':'border-gray-300'} rounded mt-1 md:mt-0`}>
                 <option value="">Select</option>
                 <option value="0h">0 hour</option>
                 <option value="<2h">{'<'}2 hours</option>
@@ -735,7 +735,7 @@ const Step2 = ({currentPage}) => {
                 <option value=">8h">More than 8 hours</option>
               </select>
             </div>
-            <div className="w-full flex justify-between items-center mt-2">
+            <div className="w-full flex flex-col md:flex-row md:justify-center md:items-center mt-2">
               <label className="mr-5 flex-1 text-sm" htmlFor="programsWatched_rhymes">
                 Rhymes:
               </label>
@@ -743,7 +743,7 @@ const Step2 = ({currentPage}) => {
                 name="programsWatched_rhymes"
                 value={formData?.programsWatched?.rhymes}
                 onChange={handleChange}
-                className={`flex-1 p-2 border ${formErrors.programsWatched?.rhymes?'border-red-500':'border-gray-300'} rounded`}>
+                className={`flex-1 p-2 border ${formErrors.programsWatched?.rhymes?'border-red-500':'border-gray-300'} rounded mt-1 md:mt-0`}>
                 <option value="">Select</option>
                 <option value="0h">0 hour</option>
                 <option value="<2h">{'<'}2 hours</option>
@@ -753,7 +753,7 @@ const Step2 = ({currentPage}) => {
                 <option value=">8h">More than 8 hours</option>
               </select>
             </div>
-            <div className="w-full flex justify-between items-center mt-2">
+            <div className="w-full flex flex-col md:flex-row md:justify-center md:items-center mt-2">
               <label className="mr-5 flex-1 text-sm" htmlFor="programsWatched_knowledge">
                 Knowledge based (News / web series / any more):
               </label>
@@ -761,7 +761,7 @@ const Step2 = ({currentPage}) => {
                 name="programsWatched_knowledge"
                 value={formData?.programsWatched?.knowledge}
                 onChange={handleChange}
-                className={`flex-1 p-2 border ${formErrors.programsWatched?.knowledge?'border-red-500':'border-gray-300'} rounded`}>
+                className={`flex-1 p-2 border ${formErrors.programsWatched?.knowledge?'border-red-500':'border-gray-300'} rounded mt-1 md:mt-0`}>
                 <option value="">Select</option>
                 <option value="0h">0 hour</option>
                 <option value="<2h">{'<'}2 hours</option>
@@ -771,7 +771,7 @@ const Step2 = ({currentPage}) => {
                 <option value=">8h">More than 8 hours</option>
               </select>
             </div>
-            <div className="w-full flex justify-between items-center mt-2">
+            <div className="w-full flex flex-col md:flex-row md:justify-center md:items-center mt-2">
               <label className="mr-5 flex-1 text-sm" htmlFor="programsWatched_spiritual">
                 Spiritual (bhajan):
               </label>
@@ -779,7 +779,7 @@ const Step2 = ({currentPage}) => {
                 name="programsWatched_spiritual"
                 value={formData?.programsWatched?.spiritual}
                 onChange={handleChange}
-                className={`flex-1 p-2 border ${formErrors.programsWatched?.spiritual?'border-red-500':'border-gray-300'} rounded`}>
+                className={`flex-1 p-2 border ${formErrors.programsWatched?.spiritual?'border-red-500':'border-gray-300'} rounded mt-1 md:mt-0`}>
                 <option value="">Select</option>
                 <option value="0h">0 hour</option>
                 <option value="<2h">{'<'}2 hours</option>
@@ -789,7 +789,7 @@ const Step2 = ({currentPage}) => {
                 <option value=">8h">More than 8 hours</option>
               </select>
             </div>
-            <div className="w-full flex justify-between items-center mt-2">
+            <div className="w-full flex flex-col md:flex-row md:justify-center md:items-center mt-2">
               <label className="mr-5 flex-1 text-sm" htmlFor="programsWatched_serials">
                 Serials:
               </label>
@@ -797,7 +797,7 @@ const Step2 = ({currentPage}) => {
                 name="programsWatched_serials"
                 value={formData?.programsWatched?.serials}
                 onChange={handleChange}
-                className={`flex-1 p-2 border ${formErrors.programsWatched?.serials?'border-red-500':'border-gray-300'} rounded`}>
+                className={`flex-1 p-2 border ${formErrors.programsWatched?.serials?'border-red-500':'border-gray-300'} rounded mt-1 md:mt-0`}>
                 <option value="">Select</option>
                 <option value="0h">0 hour</option>
                 <option value="<2h">{'<'}2 hours</option>

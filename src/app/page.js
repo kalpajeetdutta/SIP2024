@@ -6,7 +6,9 @@ import Contact from './Contact/page'
 import Landing from './Landing/page'
 import Members from './Members/page'
 import Mentors from './Mentors/page'
-import Form from './form/page'
+import Form from './survey/page'
+import Query from './query/page'
+import Table from './Table/page'
 
 export default function Home() {
 
@@ -24,12 +26,13 @@ export default function Home() {
 
   return (
     <div className='overflow-hidden'>
-      <Form />
-      {/* <Landing pageRef={pageRef} scrollToPage={scrollToPage} />
+      <Landing pageRef={pageRef} scrollToPage={scrollToPage} />
       <About pageRef={pageRef.about} />
       <Members pageRef={pageRef.members} />
       <Mentors pageRef={pageRef.mentors} />
-      <Contact pageRef={pageRef.contact} /> */}
+      <Contact pageRef={pageRef.contact} />
+      {/* <Query /> */}
+      {/* <Table /> */}
     </div>
   )
 }
