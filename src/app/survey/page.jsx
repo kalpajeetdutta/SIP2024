@@ -7,8 +7,8 @@ import Step3 from '../components/parentAwareness';
 import { useEffect } from 'react';
 
 const Form = () => {
-  // const currentPage = useSelector(state => state.currentPage)
-  const currentPage = 0
+  const currentPage = useSelector(state => state.currentPage)
+  // const currentPage = 0
   console.log('currentPage',currentPage)
 
   const render = (currentPage) => {

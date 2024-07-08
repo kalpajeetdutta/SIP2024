@@ -13,7 +13,6 @@ const Landing = ({pageRef, scrollToPage}) => {
 
   return (
     <div
-      ref={pageRef.home}
       className="relative w-full h-screen font-jaldi overflow-hidden">
       <img
         className="absolute bottom-0 left-0 h-[calc(35vh)] -z-10"
