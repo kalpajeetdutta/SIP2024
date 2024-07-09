@@ -16,7 +16,7 @@ const ScreenTimeChartfive = () => {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': 'https://interntezu.netlify.app/',
+        'Access-Control-Allow-Origin': 'https://interntezu.netlify.app',
         'Access-Control-Allow-Credentials': 'true',
       },
       credentials: 'include',
