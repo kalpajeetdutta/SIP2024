@@ -12,7 +12,7 @@ const ScreenTimeChartfive = () => {
   const [width, setWidth] = useState(0);
 
   const fetchData = () => {
-    fetch('http://localhost:8080/api/data/get', {
+    fetch('https://sip2024-backend.onrender.com/api/data/get', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',

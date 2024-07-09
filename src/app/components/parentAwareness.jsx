@@ -65,7 +65,7 @@ const Step3 = ({currentPage}) => {
       ...mainData
     } = formData;
     // console.log(mainData);
-    fetch('http://localhost:8080/api/data/add', {
+    fetch('https://sip2024-backend.onrender.com/api/data/add', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

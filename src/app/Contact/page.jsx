@@ -29,7 +29,7 @@ const Contact = ({pageRef, width}) => {
 
   const submitData = () => {
 
-    fetch('http://localhost:8080/api/contact/add', {
+    fetch('https://sip2024-backend.onrender.com/api/contact/add', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
