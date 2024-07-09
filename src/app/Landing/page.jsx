@@ -16,7 +16,7 @@ const Landing = ({pageRef, scrollToPage, width}) => {
       className="relative w-full h-screen font-jaldi overflow-hidden">
       <img
         className="absolute bottom-0 left-0 h-[calc(35vh)] -z-10"
-        alt=""
+        alt="background"
         src="/rectangle-37.svg"
       />
       <div className="-z-10 absolute top-[100px] right-0 [filter:blur(60px)] [background:linear-gradient(180deg,_rgba(9,_225,_255,_0.1),_rgba(255,_255,_255,_0.1))] w-[50px] md:w-[200px] h-[457.9px] md:h-[calc(100vh-30%)] [transform:_rotate(-12deg)] [transform-origin:0_0]" />
@@ -153,7 +153,7 @@ const Landing = ({pageRef, scrollToPage, width}) => {
           </div>
         </div>
         <div className="relative md:flex w-[40%] justify-center items-center hidden">
-          <img className="w-[80%]" alt="" src="/polygon-1.svg" />
+          <img className="w-[80%]" alt="polygon" src="/polygon-1.svg" />
           <CldImage
             className="absolute"
             src="/assets/hero-img.png"

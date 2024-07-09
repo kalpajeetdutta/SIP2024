@@ -42,8 +42,9 @@ const About = ({pageRef, width}) => {
           <div className="absolute top-[8%] md:top-[15%] right-[10%] bg-lightturquoise md:w-[347px] w-[200px] h-[220px] md:h-[421px]" />
           <CldImage
             className="absolute top-[20%] md:top-[25%] right-[30%] w-[200px] h-[220px] md:w-[347px] md:h-[421px] object-cover"
-            src="/assets/about.jpg" // Use this sample image or upload your own via the Media Explorer
-            width={width < 768? 200:347}// Transform the image: auto-crop to square aspect_ratio
+            src="/assets/about.jpg"
+            alt='about'
+            width={width < 768? 200:347}
             height={width < 768? 220:420}
             crop={{
               type: 'auto',

@@ -192,6 +192,7 @@ const Contact = ({pageRef, width}) => {
           <CldImage
             className="w-full object-cover mix-blend-multiply"
             src="/assets/contact-img.jpg"
+            alt='contact'
             width={width < 768 ? 200 : width < 1024 ? 400 : 350}
             height={width < 768 ? 200 : width < 1024 ? 400 : 350}
             style={{objectFit: 'contain'}}
