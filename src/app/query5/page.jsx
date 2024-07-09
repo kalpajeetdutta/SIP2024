@@ -1,4 +1,4 @@
-"use client"
+'use client';
 
 import React, {useState, useEffect} from 'react';
 import {Bar, Pie} from 'react-chartjs-2';
@@ -174,15 +174,15 @@ const ScreenTimeChartfive = () => {
   return (
     <div className="w-full h-full overflow-x-hidden p-5">
       <h1 className="mb-10 text-lg md:text-3xl text-center">
-        Query: Graphical representation of screen time percentage(%) of different programs
-        watched by children
+        Query: Graphical representation of screen time percentage(%) of
+        different programs watched by children
       </h1>
       <div className="w-full h-full flex flex-col md:flex-row gap-10 md:gap-0">
         <div
           className="relative flex justify-center"
           style={{
-            width: width < 768 ? width - 40 : (width * (50 / 100)),
-            height: width < 768 ? width * (80 / 100) : (width * (30 / 100)),
+            width: width < 768 ? width - 40 : width * (50 / 100),
+            height: width < 768 ? width * (80 / 100) : width * (30 / 100),
           }}>
           <Bar
             data={chartData}
@@ -202,10 +202,10 @@ const ScreenTimeChartfive = () => {
               },
               plugins: {
                 title: {
-                    display: true,
-                    text: 'Gender wise %'
-                }
-            }
+                  display: true,
+                  text: 'Gender wise %',
+                },
+              },
             }}
           />
         </div>
@@ -255,6 +255,35 @@ const ScreenTimeChartfive = () => {
             ))}
           </tbody>
         </table>
+      </div>
+      <div className="mt-10 px-5">
+        <p className="text-base md:text-lg font-semibold">Overall Usage:</p>
+        <ul className="text-sm md:text-base my-2">
+          <li>
+            The highest overall screen time usage is for rhymes (26.41%) and
+            animated cartoons (21.21%). Other significant categories include
+            songs (19.48%) and spiritual (11.69%). Lower percentages are seen in
+            movie animated (6.49%), knowledge (6.06%), non-animated cartoons
+            (3.90%), serials (3.03%), and movie non-animated (1.73%).
+          </li>
+        </ul>
+        <p className="text-base md:text-lg font-semibold">Gender Comparison:</p>
+        <ul className="text-sm md:text-base">
+          <li className="my-2">
+            Males spend more time on rhymes (26.60%) and songs (18.62%), while
+            females spend more on songs (23.26%) and movie animated (9.30%).
+            Animated cartoons have similar screen time for both genders (males:
+            21.28%, females: 20.93%). Females spend slightly more time on
+            non-animated cartoons (4.65%) compared to males (3.72%).
+          </li>
+        </ul>
+        <h2 className="text-xl md:text-2xl">Conclusion</h2>
+        <p className="text-sm md:text-base">
+          Rhymes and animated cartoons are the dominant screen time activities
+          for both genders. Notable gender differences are present in screen
+          time for songs, rhymes, and movie animated categories. Overall, males
+          and females show distinct preferences in their screen time activities.
+        </p>
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 "use client"
 
-import Image from 'next/image';
+import { CldImage } from 'next-cloudinary';
 import Link from 'next/link';
 import {useState} from 'react';
 import {FaArrowRight} from 'react-icons/fa';
@@ -8,7 +8,7 @@ import {FcSurvey} from 'react-icons/fc';
 import {GiHamburgerMenu} from 'react-icons/gi';
 import {IoClose} from 'react-icons/io5';
 
-const Landing = ({pageRef, scrollToPage}) => {
+const Landing = ({pageRef, scrollToPage, width}) => {
   const [isActive, setIsActive] = useState(false);
 
   return (
@@ -23,8 +23,17 @@ const Landing = ({pageRef, scrollToPage}) => {
       <div className="-z-10 absolute top-0 left-0 right-0 [filter:blur(20px)] [background:linear-gradient(180deg,_rgba(9,_225,_255,_0.1),_rgba(255,_255,_255,_0.1))] h-[315px]" />
       <div className="flex items-center justify-between h-[80px] px-10 md:px-20 z-50 relative md:static">
         <div className='m-0 p-0 w-fit h-full flex items-center justify-center'>
-          <Image src="/tulogo.png" alt='logo' width={60} height={60} />
-          <b className="ml-5 text-2xl md:text-3xl">Intern</b>
+          <CldImage
+            src="/assets/tulogo.png"
+            alt='logo'
+            width="60"
+            height="60"
+            crop={{
+              type: 'auto',
+              source: true,
+            }}
+          />
+          <b className="ml-3 md:ml-5 text-lg md:text-xl">Tezpur University <span className='text-lg md:text-xl'>(Dpt. CSE)</span></b>
         </div>
         <div className="hidden md:flex justify-evenly w-[50%]">
           <div
@@ -145,10 +154,17 @@ const Landing = ({pageRef, scrollToPage}) => {
         </div>
         <div className="relative md:flex w-[40%] justify-center items-center hidden">
           <img className="w-[80%]" alt="" src="/polygon-1.svg" />
-          <img
-            className="w-[80%] absolute object-cover"
-            alt=""
-            src="/whatsapp-image-20240625-at-10130-pmremovebgpreview-1@2x.png"
+          <CldImage
+            className="absolute"
+            src="/assets/hero-img.png"
+            alt='logo'
+            width={width <1024? 300 : 400}
+            height={width <1024? 300 : 400}
+            style={{objectFit: "contain"}}
+            crop={{
+              type: 'auto',
+              source: true,
+            }}
           />
         </div>
       </div>

@@ -1,12 +1,7 @@
-import Image from 'next/image';
+import { CldImage } from 'next-cloudinary';
 
 const Mentors = ({pageRef}) => {
-  const items = [
-    {
-      name: 'Item 1',
-      desc: 'Description of Item 1',
-    },
-  ];
+
   return (
     <div
       ref={pageRef}
@@ -22,33 +17,37 @@ const Mentors = ({pageRef}) => {
         <div className="w-full h-[calc(100vh-140px)]">
           <div className="w-full flex justify-center">
             <div className="w-fit">
-              <div className="w-[200px] md:w-[200px] h-[220px] md:h-[220px]">
-                <Image
-                  className="bg-red-500 w-full h-full object-cover"
-                  src="/mentor.jpeg"
-                  alt='mentor image'
-                  width={150}
-                  height={150}
-                />
+              <div className="w-[200px] h-[220px]">
+                <CldImage
+                      src='/mentor/mentor.jpg'
+                      alt="mentor"
+                      width='200'
+                      height='200'
+                      style={{objectFit: 'cover'}}
+                      crop={{
+                        type: 'auto',
+                        source: true,
+                      }}
+                    />
               </div>
             </div>
           </div>
           <h4 className="m-0 p-0 my-5 text-base md:text-lg font-bold text-center">Dr. Siddhartha S. Satapathy</h4>
           <div className="w-full flex flex-col items-center">
-            <ul className="text-sm ml-5 list-none">
+            <ul className="text-xs ml-5 list-none">
               <li className="my-1">MTech (IT), Tezpur University, 2006.</li>
               <li className="my-1">PhD, Tezpur University, January 2014.</li>
             </ul>
-            <h3 className="text-base font-medium mt-3">Academic career:</h3>
-            <ul className="text-sm ml-5 list-none text-center">
+            <h3 className="text-sm font-medium mt-3">Academic career:</h3>
+            <ul className="text-xs ml-5 list-none text-center">
               <li className="my-1">
                 JDA Software India Pvt. Ltd, Hyderabad (August 2006 to September
                 2007).
               </li>
               <li>Teradata, Hyderabad (September 2007 to December 2007).</li>
             </ul>
-            <h3 className="text-base font-medium mt-3">Academic career:</h3>
-            <ul className="text-sm ml-5 list-none text-center">
+            <h3 className="text-sm font-medium mt-3">Academic career:</h3>
+            <ul className="text-xs ml-5 list-none text-center">
               <li className="my-1">
                 Asst. Professor, Department of Computer Science & Engineering,
                 Tezpur University (10th December 2007 to 25th August 2014).

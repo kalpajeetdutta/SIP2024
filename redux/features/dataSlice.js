@@ -17,9 +17,10 @@ const dataSlice = createSlice({
                 ...state.data,
                 ...action.payload
             }
-        }
+        },
+        resetData: () => initialState
     }
 })
 
-export const {setCurrentPage, updateData} = dataSlice.actions;
+export const {setCurrentPage, updateData, resetData} = dataSlice.actions;
 export default dataSlice.reducer;

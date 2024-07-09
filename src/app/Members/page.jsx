@@ -1,39 +1,40 @@
+import {CldImage} from 'next-cloudinary';
 
-import Image from 'next/image';
-
-const Members = ({pageRef}) => {
+const Members = ({pageRef, width}) => {
   const items = [
     {
       name: 'Kalpajeet Dutta',
       desc: 'B.Tech CSE, Kaziranga University (3rd year)',
-      img: '/kalpajeet.jpg'
+      img_id: 'members/kalpajeet',
     },
     {
       name: 'Prachurjya Goswami',
       desc: 'B.Tech CSE, Kaziranga University (3rd year)',
-      img: '/prachurjya.png'
+      img_id: 'members/prachurjya',
     },
     {
       name: 'Priyanuj Bhowmick',
       desc: 'B.Tech CSE, Kaziranga University (3rd year)',
-      img: '/priyanuj.png'
+      img_id: 'members/priyanuj',
     },
     {
       name: 'Sharbanee Kalita',
       desc: 'B.Tech CSE, Kaziranga University (3rd year)',
-      img: '/sharbanee.jpeg'
+      img_id: 'members/sharbanee',
     },
     {
       name: 'Moushree Dey',
-      desc: 'M.Tech CSE, IIIT-Guwahati',
-      img: '/moushree.jpeg'
+      desc: 'M.Tech CSE, IIIT-Guwahati (2nd year)',
+      img_id: 'members/moushree',
     },
     {
       name: 'Kangkan J Borah',
       desc: 'B.Tech CSE, Kaziranga University (3rd year)',
-      img: '/ku.png'
+      img_id: 'members/kangkan',
     },
   ];
+  // const api_key = process.env.API_KEY
+  // const api_secret = process.env.API_SECRET
 
   return (
     <div ref={pageRef} className="relative w-full h-screen">
@@ -47,23 +48,33 @@ const Members = ({pageRef}) => {
           </p>
         </div>
         <div className="w-full h-[calc(100vh-140px)] grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-5 mt-5">
-          {items.map(({name, desc, img}, _i) => {
+          {items.map(({name, desc, img_id}, _i) => {
             return (
-              <div key={_i} className="w-full h-full flex flex-col items-center justify-center">
-                <div className='w-fit'>
-                <div className="w-[150px] md:w-[220px] h-[150px] md:h-[220px]">
-                  <Image
-                    className="bg-red-500 w-full h-full object-cover"
-                    src={img}
-                    alt=""
-                    width={150}
-                    height={150}
-                  />
-                </div>
-                <div className="w-[150px] md:w-[220px] text-center bg-white py-2 px-2">
-                  <h4 className='m-0 p-0 text-xs md:text-base font-bold'>{name}</h4>
-                  <p className='m-0 p-0 text-[10px] md:text-xs font-light mt-1 md:mt-2'>{desc}</p>
-                </div>
+              <div
+                key={_i}
+                className="w-full h-full flex flex-col items-center justify-center">
+                <div className="w-fit">
+                  <div className="w-[150px] md:w-[220px] h-[150px] md:h-[220px]">
+                    <CldImage
+                      src={img_id}
+                      alt="logo"
+                      width={width < 768 ? 150 : 220}
+                      height={width < 768 ? 150 : 220}
+                      style={{objectFit: 'cover'}}
+                      crop={{
+                        type: 'auto',
+                        source: true,
+                      }}
+                    />
+                  </div>
+                  <div className="w-[150px] md:w-[220px] text-center bg-white py-2 px-2">
+                    <h4 className="m-0 p-0 text-xs md:text-base font-bold">
+                      {name}
+                    </h4>
+                    <p className="m-0 p-0 text-[10px] md:text-xs font-light mt-1 md:mt-2">
+                      {desc}
+                    </p>
+                  </div>
                 </div>
               </div>
             );

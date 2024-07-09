@@ -18,7 +18,7 @@ const Step1 = ({currentPage}) => {
       { key: 'religion', options: [] },
       { key: 'primaryCareGiver', options: [] },
       { key: 'qualification', options: ['mother', 'father'] },
-      { key: 'totalSiblings', options: [] },
+      { key: 'totalChild', options: [] },
       { key: 'childOrder', options: [] },
       { key: 'socioeconomicClass', options: [] }
     ];
@@ -94,7 +94,8 @@ const Step1 = ({currentPage}) => {
     }
   };
   return (
-    <div>
+    <div className="w-full bg-slate-200 py-10">
+          <div className="max-w-4xl mx-auto bg-white p-10 rounded-lg shadow-lg">
       <h1 className="underline text-center mb-5 mt-0 text-2xl md:text-3xl">
         Information of the child
       </h1>
@@ -386,10 +387,10 @@ const Step1 = ({currentPage}) => {
               <span className="text-xs text-red-500 ml-1">*</span>
             </label>
             <select
-              name="totalSiblings"
-              value={formData?.totalSiblings}
+              name="totalChild"
+              value={formData?.totalChild}
               onChange={handleChange}
-              className={`w-full p-2 border ${formErrors.totalSiblings?'border-red-500':'border-gray-300'} rounded mt-1`}>
+              className={`w-full p-2 border ${formErrors.totalChild?'border-red-500':'border-gray-300'} rounded mt-1`}>
               <option value="">Select</option>
               <option value="1">Single child</option>
               <option value="2">2 children at home</option>
@@ -397,7 +398,7 @@ const Step1 = ({currentPage}) => {
               <option value="<3">Less than 3 children at home</option>
               <option value=">=3">More than equal to 3 children at home</option>
             </select>
-            {formErrors.totalSiblings && <span className='text-xs text-red-500'>This field is required</span>}
+            {formErrors.totalChild && <span className='text-xs text-red-500'>This field is required</span>}
           </div>
           <div>
             <label className="block text-gray-700">
@@ -566,11 +567,12 @@ const Step1 = ({currentPage}) => {
         <div className="w-full mt-10 flex justify-center md:justify-end">
           <button
             type="submit"
-            className="cursor-pointer py-3 px-8 bg-blue-600 text-white font-bold rounded-md hover:bg-blue-700 transition text-lg">
+            className="border-none cursor-pointer py-3 px-8 bg-blue-600 text-white font-bold rounded-md hover:bg-blue-700 transition text-lg">
             Next
           </button>
         </div>
       </form>
+    </div>
     </div>
   );
 };

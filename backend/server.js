@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import dataRouter from "./routes/data-routes.js";
+import contactRouter from "./routes/contact-routes.js";
 import mongoose from "mongoose";
 
 const app = express()
@@ -14,5 +15,6 @@ app.use(cors({
 }));
 
 app.use('/api/data', dataRouter)
+app.use('/api/contact', contactRouter)
 
 mongoose.connect("mongodb://localhost:27017/").then(() => app.listen(PORT)).then(() => console.log("Connected successfully on PORT: 8080"))

@@ -1,4 +1,6 @@
-const About = ({pageRef}) => {
+import {CldImage} from 'next-cloudinary';
+
+const About = ({pageRef, width}) => {
   // console.log("ref",pageRef)
 
   return (
@@ -21,7 +23,10 @@ const About = ({pageRef}) => {
           <div className="text-dimgray font-inter text-xs md:text-sm mt-5 md:mt-3 text-center md:text-start">
             Welcome to our portal dedicated to exploring the impact of screen
             time on language development in Indian children aged 2-5 years. We
-            are a team of summer internship students from Tezpur University,
+            are a team of{' '}
+            <span className="font-semibold text-black">Summer internship</span>{' '}
+            students from{' '}
+            <span className="font-semibold text-black">Tezpur University</span>,
             passionate about understanding and visualizing the intricate
             relationship between early childhood screen exposure and language
             acquisition. Our project aims to provide an interactive platform
@@ -35,10 +40,15 @@ const About = ({pageRef}) => {
         </div>
         <div className="relative md:w-[40%] w-full h-full">
           <div className="absolute top-[8%] md:top-[15%] right-[10%] bg-lightturquoise md:w-[347px] w-[200px] h-[220px] md:h-[421px]" />
-          <img
+          <CldImage
             className="absolute top-[20%] md:top-[25%] right-[30%] w-[200px] h-[220px] md:w-[347px] md:h-[421px] object-cover"
-            alt=""
-            src="/e931034185a648689806153b624e65c0-1@2x.png"
+            src="/assets/about.jpg" // Use this sample image or upload your own via the Media Explorer
+            width={width < 768? 200:347}// Transform the image: auto-crop to square aspect_ratio
+            height={width < 768? 220:420}
+            crop={{
+              type: 'auto',
+              source: true,
+            }}
           />
         </div>
       </div>

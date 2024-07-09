@@ -89,7 +89,8 @@ const Step2 = ({currentPage}) => {
     }
   };
   return (
-    <div>
+    <div className="w-full bg-slate-200 py-10">
+          <div className="max-w-4xl mx-auto bg-white p-10 rounded-lg shadow-lg">
       <h1 className="underline text-center mb-5 mt-0 text-2xl md:text-3xl">
         Screen-time survey questions (Weekdays and Weekends)
       </h1>
@@ -884,7 +885,7 @@ const Step2 = ({currentPage}) => {
               type="submit"
               name="previous"
               value="previous"
-              className="md:mr-10 cursor-pointer py-3 px-8 bg-yellow-600 text-white font-bold rounded-md hover:bg-yellow-700 transition text-lg">
+              className="md:mr-10 border-none cursor-pointer py-3 px-8 bg-yellow-600 text-white font-bold rounded-md hover:bg-yellow-700 transition text-lg">
               Previous
             </button>
           )}
@@ -892,11 +893,12 @@ const Step2 = ({currentPage}) => {
             type="submit"
             name="next"
             value="next"
-            className="cursor-pointer py-3 px-8 bg-blue-600 text-white font-bold rounded-md hover:bg-blue-700 transition text-lg">
+            className="cursor-pointer border-none py-3 px-8 bg-blue-600 text-white font-bold rounded-md hover:bg-blue-700 transition text-lg">
             Next
           </button>
         </div>
       </form>
+    </div>
     </div>
   );
 };

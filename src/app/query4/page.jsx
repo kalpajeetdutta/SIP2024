@@ -1,4 +1,4 @@
-"use client"
+'use client';
 
 import React, {useState, useEffect} from 'react';
 import {Bar, Pie} from 'react-chartjs-2';
@@ -170,7 +170,8 @@ const ScreenTimeChartthree = () => {
   return (
     <div className="w-full h-full overflow-x-hidden p-5 md:px-10">
       <h1 className="mb-10 text-lg md:text-3xl text-center">
-      Query : Graphical representation of weekdays screentime purpose percentage(%) of children
+        Query : Graphical representation of weekdays screentime purpose
+        percentage(%) of children
       </h1>
       <div className="w-full h-full flex flex-col md:flex-row md:justify-between gap-10 md:gap-0">
         <div
@@ -250,6 +251,35 @@ const ScreenTimeChartthree = () => {
             ))}
           </tbody>
         </table>
+      </div>
+      <div className="mt-10 px-5">
+        <p className="text-base md:text-lg font-semibold">Overall Usage:</p>
+        <ul className="text-sm md:text-base my-2">
+          <li>
+            The highest overall screen time usage is for entertainment (25.53%),
+            followed by engaging (15.83%) and education at (15.11%), and meals
+            (14.03%). Lower percentages are seen in playing games (11.15%),
+            social connect (7.55%), and before bed (11.15%).
+          </li>
+        </ul>
+        <p className="text-base md:text-lg font-semibold">Gender Comparison:</p>
+        <ul className="text-sm md:text-base my-2">
+          <li>
+            Males spend more time on entertainment (25.53%) and engaging
+            (16.60%), while females spend more on meals (23.26%) and entertainment
+            (23.26%). Education is fairly similar for both genders (males:
+            14.89%, females: 16.28%). Males also have higher screen time for
+            social connect (8.09%) and before bed (12.34%) compared to females
+            (4.65% for both categories).
+          </li>
+        </ul>
+        <h2 className="text-xl md:text-2xl">Conclusion</h2>
+        <p className="text-sm md:text-base">
+          Entertainment is the dominant screen time activity for both genders.
+          Notable gender differences are present in screen time for engaging,
+          playing games, and meals. Overall, males and females show distinct
+          preferences in their screen time activities.
+        </p>
       </div>
     </div>
   );

@@ -252,6 +252,34 @@ const ScreenTimeChartthree = () => {
           </tbody>
         </table>
       </div>
+      <div className="mt-10 px-5">
+        <p className="text-base md:text-lg font-semibold">Overall Usage:</p>
+        <ul className="text-sm md:text-base my-2">
+          <li>
+            The highest overall screen time usage is for entertainment (24.51%),
+            followed by education (18.58%) and meals (18.18%). Playing games
+            (12.65%), engaging (14.62%), before bed (7.91%), and social connect
+            (3.56%) have lower percentages.
+          </li>
+        </ul>
+        <p className="text-base md:text-lg font-semibold">Gender Comparison:</p>
+        <ul className="text-sm md:text-base">
+          <li className="my-2">
+            Males spend more time on education (19.02%) and social connect
+            (3.90%), while females spend more on playing games (16.67%) and
+            meals (20.83%). Entertainment is almost equal for both genders
+            (males: 24.39%, females: 25.00%). Females have higher screen time
+            for before bed (8.33%) compared to males (7.80%).
+          </li>
+        </ul>
+        <h2 className="text-xl md:text-2xl">Conclusion</h2>
+        <p className="text-sm md:text-base">
+          Entertainment dominates screen time for both genders. Gender
+          differences are evident in screen time for education, playing games,
+          meals, and social connect. Overall, males and females have distinct
+          preferences in their screen time activities.
+        </p>
+      </div>
     </div>
   );
 };
