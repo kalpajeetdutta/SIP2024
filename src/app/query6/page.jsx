@@ -16,7 +16,7 @@ const ScreenTimeChartsix = () => {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': 'http://localhost:3000',
+        'Access-Control-Allow-Origin': 'https://interntezu.netlify.app/',
         'Access-Control-Allow-Credentials': 'true',
       },
       credentials: 'include',
