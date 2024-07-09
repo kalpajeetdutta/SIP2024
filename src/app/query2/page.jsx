@@ -1,6 +1,6 @@
 'use client';
 
-import React, {useState, useEffect} from 'react';
+import {useState, useEffect} from 'react';
 import {Bar, Pie} from 'react-chartjs-2';
 import 'chart.js/auto'; // Required for Chart.js 3
 
