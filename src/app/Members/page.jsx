@@ -1,3 +1,4 @@
+"use client"
 import {CldImage} from 'next-cloudinary';
 
 const Members = ({pageRef, width}) => {
